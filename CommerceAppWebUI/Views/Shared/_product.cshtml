@@ -1,0 +1,17 @@
+﻿@model Product
+<div class="card mb-3">
+    
+    <img src="~/img/@Model.ImgUrl" >
+   
+    <div class="card-body">
+        <p class="card-title">@Model.Name</p>
+        <small class="text-muted">
+            @Model.Price <i class="fa-solid fa-manat-sign"> </i>
+        </small>
+        <p class="card-text">@Model.Description</p>
+        <div class="card-footer text-center">
+            <a asp-controller="commerce" asp-action="Details" asp-route-url="@Model.Url" class="btn btn-primary btn-sm">Inspect</a>
+            <a asp-controller="commerce" asp-action="addtocard" asp-route-id="@Model.ProductId" class="btn btn-primary btn-sm">Add To Card</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+﻿@model ProductModel
+
+<h1 class="h3">Create Product</h1>
+<hr>
+
+<form asp-controller="Admin" asp-action="CreateProduct" method="post">
+    <div class="row">
+        <div class="col-md-8">
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 col-form-label col-sm-2" asp-for="@Model.Name"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.Name">
+                </div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 col-form-label col-sm-2" asp-for="@Model.Url"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.Url">
+                </div>
+                <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 col-form-label col-sm-2" asp-for="@Model.Price"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.Price">
+                </div>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 col-form-label col-sm-2" asp-for="@Model.Description"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.Description">
+                </div>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+                <div class="form-group row mb-3">
+                <label class="col-sm-2 col-form-label col-sm-2" asp-for="@Model.ImgUrl"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.ImgUrl">
+                </div>
+                <span asp-validation-for="ImgUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <div class="col-sm-10 offset-2">
+                    <button type="submit" class="btn btn-primary" >Save Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+{
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+    

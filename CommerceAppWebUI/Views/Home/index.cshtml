@@ -1,0 +1,24 @@
+﻿@using CommerceAppWebUI.Models
+@model ProductListViewModel
+
+ <div class="row">
+
+     @await Html.PartialAsync("_header",false)
+    @if (Model.Products.Count == 0)
+    {
+        @await Html.PartialAsync("_noproduct")
+        @await Html.PartialAsync("_search")
+    }
+    else
+    {   
+        <div class="row">  
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-md-3">
+                    @await Html.PartialAsync("_product",product)
+                </div>
+            } 
+        </div>
+    }
+    
+</div>

@@ -1,0 +1,100 @@
+﻿@model ProductModel
+
+<h1 class="h3">Update Product</h1>
+<hr >
+
+<form asp-controller="Admin" asp-action="EditProduct" method="post" enctype="multipart/form-data">
+
+  <div class="row">
+        <div class="col-md-8">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" name="ProductId" value="@Model.ProductId">
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 form-label" asp-for="@Model.Name"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.Name">
+                </div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 form-label" asp-for="@Model.Url"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.Url">
+                </div>
+                <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 form-label" asp-for="@Model.Price"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.Price">
+                </div>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 form-label" asp-for="@Model.Description"></label>
+                <div class="col-sm-10">
+                    <textarea id="editor" class="form-control" asp-for="@Model.Description"></textarea>
+                </div>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 form-label" asp-for="@Model.ImgUrl"></label>
+                <div class="col-sm-10">
+
+                    <input type="hidden" asp-for="ImgUrl">
+                    <div class="input-group mb-3">
+                      <input type="file" name="file" class="form-control">
+                    </div>
+                </div>
+                <span asp-validation-for="ImgUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <div class="col-sm-10 offset-2">
+                    <button type="submit" class="btn btn-outline-primary">Save Chances</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-4">
+            @*Nullreferenceexception xetalarinin onune kecmek ucun kontrol*@
+
+           @if(Model.SelectedCategories!=null && ViewBag.Categories!=null)
+           {
+                @for (int i = 0; i < Model.SelectedCategories.Count; i++)
+                {
+                    <input type="hidden" value="@Model.SelectedCategories[@i].CategoryId" name="CategoryId">
+                    <input type="hidden" value="@Model.SelectedCategories[@i].Name" name="Name">
+                } 
+           
+                @foreach (var item in (List<Category>)ViewBag.Categories)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" 
+                        value="@item.CategoryId" id="@item.CategoryId" name="CategoryIds"
+                        @(Model.SelectedCategories.Any(q=>q.CategoryId==item.CategoryId)?"checked":"")>
+                        <label class="form-check-label" for="@item.CategoryId">@item.Name</label>
+                    </div>
+                }
+           }
+           <hr />
+           <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="@Model.IsApproved">
+                <label class="form-check-label" asp-for="@Model.IsApproved"></label>
+           </div>
+           <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="@Model.IsHomePage">
+                <label class="form-check-label" asp-for="@Model.IsHomePage"></label>
+           </div>
+
+        </div>
+  </div>
+</form>
+
+
+@section Scripts
+{
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+    

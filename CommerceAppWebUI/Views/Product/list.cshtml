@@ -1,0 +1,40 @@
+﻿@model ProductListViewModel
+
+
+
+@section MessageBox
+{
+    <div class="alert alert-success text-center m-0">You have a message!</div>
+}
+@section Header
+{
+    @await Html.PartialAsync("_header")
+}
+<div class="row">
+    <div class="col-md-3">
+    @*categories*@
+    @section Category
+    {
+        @await Component.InvokeAsync("Categories")
+    }
+    </div>
+
+
+    @if (Model.Products.Count == 0)
+    {
+        @await Html.PartialAsync("_noproduct")
+    }
+    else
+    {   
+        <div class="row">  
+        @*products*@
+        @foreach (var product in Model.Products)
+        {
+            <div class="col-md-3">
+                @await Html.PartialAsync("_product",product)
+            </div>
+        } 
+        </div>
+    }
+</div>
+       

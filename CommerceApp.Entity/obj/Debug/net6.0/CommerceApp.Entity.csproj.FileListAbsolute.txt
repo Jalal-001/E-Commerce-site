@@ -1,0 +1,24 @@
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\bin\Debug\net6.0\CommerceApp.Entity.deps.json
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\bin\Debug\net6.0\CommerceApp.Entity.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\bin\Debug\net6.0\CommerceApp.Entity.pdb
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.csproj.AssemblyReference.cache
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.GeneratedMSBuildEditorConfig.editorconfig
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.AssemblyInfoInputs.cache
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.AssemblyInfo.cs
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.csproj.CoreCompileInputs.cache
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\refint\CommerceApp.Entity.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.pdb
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\ref\CommerceApp.Entity.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\bin\Debug\net6.0\CommerceApp.Entity.deps.json
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\bin\Debug\net6.0\CommerceApp.Entity.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\bin\Debug\net6.0\CommerceApp.Entity.pdb
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\refint\CommerceApp.Entity.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\CommerceApp.Entity.pdb
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceApp.Entity\obj\Debug\net6.0\ref\CommerceApp.Entity.dll

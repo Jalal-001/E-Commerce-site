@@ -1,0 +1,54 @@
+﻿<navbar>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">E-Commerce</a>
+            <ul class="navbar-nav mr-auto ml-aout ">
+
+                <li class="navbar-item">
+                    <a href="/commerce/list?page=1" class="nav-link navbar-brand">Products</a>
+                </li
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                        <li class="navbar-item ">
+                        <a asp-controller="admin" asp-action="productlist"  class="nav-link navbar-brand">Admin Products</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a asp-controller="admin" asp-action="categorylist"  class="nav-link navbar-brand">Admin Categories</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a asp-controller="" asp-action=""  class="nav-link navbar-brand">Orders</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a asp-controller="" asp-action=""  class="nav-link navbar-brand">Cart</a>
+                    </li>
+                }
+
+            </ul>
+
+            <ul class="navbar-nav mr-auto" >
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="navbar-item">
+                        <a href="/account/manage"  class="nav-link navbar-brand">@User.Identity.Name</a>
+                    </li>
+                    <li class="navbar-item">
+                    <a href="/account/logout"  class="nav-link navbar-brand">Logout</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="navbar-item">
+                        <a href="/account/login"  class="nav-link navbar-brand">Login</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="/account/register"  class="nav-link navbar-brand">Register</a>
+                    </li>
+                }
+
+            </ul>
+        </div>
+    </nav>
+</navbar>

@@ -1,0 +1,68 @@
+﻿@model ProductListViewModel
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Admin Products</h3>
+        <hr>
+        <a href="createproduct" class="btn btn-outline-primary btn-sm mb-3">Add Product</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 30px;">Id</th>
+                    <th style="width: 100px;">Image</th>
+                    <th >Name</th>
+                    <th style="width: 30px;">Sharing Approval</th>
+                    <th style="width: 30px;">HomePage Approval</th>
+                    <th style="width: 20px;">Price</th>
+                    <th style="width: 150px;">Edit / Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model.Products.Count>0){
+                    @foreach (var item in Model.Products)
+                    {
+                        <tr>
+                            <td>@item.ProductId</td>
+                            <td><img src="~/img/@item.ImgUrl" style="width:80px"></img></td>
+                            <td>@item.Name</td>
+                            <td class="approval-icon">
+                                @if (item.IsApproved)
+                                {
+                                    <i class="fa-solid fa-circle-check check"></i>
+                                }
+                                else
+                                {
+                                    <i class="fa-solid fa-circle-xmark xmark"></i>
+                                }
+                            </td>
+                            <td class="approval-icon">
+                                @if(item.IsHomePage)
+                                {
+                                    <i class="fa-solid fa-circle-check check"></i>
+                                }
+                                else
+                                {
+                                    <i class="fa-solid fa-circle-xmark xmark"></i>
+                                }
+                            </td>
+                            <td>@item.Price</td>
+                            <td>
+                                <a href="/Admin/EditProduct/@item.ProductId" class="btn btn-primary btn-sm">Edit</a>
+                                
+                                <form action="/Admin/DeleteProduct" method="post" style="display:inline;">
+                                    <input type="hidden" name="ProductId" value="@item.ProductId">
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <div clasclass="alert alert-warning"><h4>No Products</h4></div>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

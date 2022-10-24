@@ -1,0 +1,22 @@
+﻿body {
+
+}
+.card img {
+    width: 100%;
+    height: 15vw;
+    object-fit: contain;
+}
+.footer{
+    background:lightblue;
+}
+.footer .footer_icon{
+    font-size:25px;
+    margin:0.5rem;
+    color:#0026ff
+}
+.approval-icon i.check {
+    color: green
+}
+.approval-icon i.xmark {
+    color: red
+}

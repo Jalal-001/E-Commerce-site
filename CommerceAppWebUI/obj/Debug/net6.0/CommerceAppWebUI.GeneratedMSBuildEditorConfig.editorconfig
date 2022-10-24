@@ -1,0 +1,160 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CommerceAppWebUI
+build_property.RootNamespace = CommerceAppWebUI
+build_property.ProjectDir = D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Admin/CategoryList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Admin/CreateCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Admin/CreateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Admin/EditCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdENhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Admin/EditProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Admin/ProductList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Commerce/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVyY2VcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Commerce/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVyY2VcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Commerce/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVyY2VcU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Home/about.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Home/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Product/about.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxhYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Product/create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxjcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Product/details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxkZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Product/edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxlZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Product/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Product/list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxsaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Shared/Components/Categories/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcmllc1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Shared/_footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9mb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Shared/_header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9oZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Shared/_navbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9uYXZiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Shared/_noproduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9ub3Byb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Shared/_product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Shared/_search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9zZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-zft7he4wnm

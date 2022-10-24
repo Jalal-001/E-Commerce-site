@@ -1,0 +1,45 @@
+﻿@using Newtonsoft.Json
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/StyleSheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <title>E-Commerce</title>
+</head>
+<body>
+
+    @await Html.PartialAsync("_navbar",false)
+    <main>
+        <div class="container">
+
+            @if(TempData["message"]!=null)
+            {
+                var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as string);  
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-@message.AlertType">
+                            @message.Message
+                        </div>
+                    </div>
+                </div>
+            }
+           
+
+            <div class="col-md-12">
+                @RenderBody()
+            </div>
+        </div>
+    </main>
+    <footer>
+        @await Html.PartialAsync("_footer",false);
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    @RenderSection("Scripts",false)
+</body>
+</html>

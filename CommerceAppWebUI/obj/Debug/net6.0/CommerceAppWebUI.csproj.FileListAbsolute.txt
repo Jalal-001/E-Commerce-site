@@ -1,0 +1,128 @@
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\appsettings.Development.json
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\appsettings.json
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.staticwebassets.runtime.json
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.exe
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.deps.json
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.runtimeconfig.json
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.pdb
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.csproj.AssemblyReference.cache
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.AssemblyInfoInputs.cache
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.AssemblyInfo.cs
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.csproj.CoreCompileInputs.cache
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.MvcApplicationPartsAssemblyInfo.cache
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.RazorAssemblyInfo.cache
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.RazorAssemblyInfo.cs
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\staticwebassets.build.json
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\staticwebassets.development.json
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\scopedcss\bundle\CommerceAppWebUI.styles.css
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\scopedcss\projectbundle\CommerceAppWebUI.bundle.scp.css
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\refint\CommerceAppWebUI.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.pdb
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.genruntimeconfig.cache
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\ref\CommerceAppWebUI.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Data.Sqlite.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\SQLitePCLRaw.batteries_v2.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\SQLitePCLRaw.core.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\alpine-x64\native\libe_sqlite3.so
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-arm\native\libe_sqlite3.so
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-arm64\native\libe_sqlite3.so
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-armel\native\libe_sqlite3.so
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-mips64\native\libe_sqlite3.so
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-s390x\native\libe_sqlite3.so
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-x64\native\libe_sqlite3.so
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-x86\native\libe_sqlite3.so
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\win-arm\native\e_sqlite3.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Data.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Entity.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Data.pdb
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Entity.pdb
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.csproj.CopyComplete
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Humanizer.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Business.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Business.pdb
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\appsettings.json
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.staticwebassets.runtime.json
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.exe
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.deps.json
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.runtimeconfig.json
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceAppWebUI.pdb
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Data.Sqlite.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\SQLitePCLRaw.core.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-s390x\native\libe_sqlite3.so
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Business.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Data.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Entity.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Business.pdb
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Data.pdb
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\CommerceApp.Entity.pdb
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.RazorAssemblyInfo.cache
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.RazorAssemblyInfo.cs
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\scopedcss\bundle\CommerceAppWebUI.styles.css
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\scopedcss\projectbundle\CommerceAppWebUI.bundle.scp.css
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.csproj.CopyComplete
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\refint\CommerceAppWebUI.dll
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.pdb
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\CommerceAppWebUI.genruntimeconfig.cache
+C:\Users\Lenovo\Desktop\E-Commerce-site-main\CommerceApp\CommerceAppWebUI\obj\Debug\net6.0\ref\CommerceAppWebUI.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

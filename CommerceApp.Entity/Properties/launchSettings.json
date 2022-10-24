@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "CommerceApp.Entity": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:62522;http://localhost:62523"
+    }
+  }
+}
