@@ -7,8 +7,15 @@ using CommerceApp.Business.Concrete;
 using CommerceAppWebUI.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using CommerceAppWebUI.EmailServices;
 
 var builder = WebApplication.CreateBuilder(args);
+
+    IConfiguration _configuration;
+    _configuration = builder.Configuration;
+
 
 // *** Add services to the container (For MVC) ***
 
@@ -31,7 +38,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Lockout.AllowedForNewUsers=true;    
 
     options.User.RequireUniqueEmail=true;
-    options.SignIn.RequireConfirmedEmail = false;
+    options.SignIn.RequireConfirmedEmail = true;
     options.SignIn.RequireConfirmedPhoneNumber=false;
 });
 builder.Services.ConfigureApplicationCookie(options =>
@@ -47,6 +54,15 @@ builder.Services.ConfigureApplicationCookie(options =>
         Name = ".CommerceApp.Security.Cookie"
     };
 });
+
+builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(i =>
+                new SmtpEmailSender(
+                    _configuration["EmailSender:Host"],
+                    _configuration.GetValue<int>("EmailSender:Port"),
+                    _configuration.GetValue<bool>("EmailSender:EnableSSL"),
+                    _configuration["EmailSender:UserName"],
+                    _configuration["EmailSender:Password"])
+                );
 
 
 builder.Services.AddControllersWithViews();

@@ -39,12 +39,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Admin/CategoryList.cshtml]
