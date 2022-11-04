@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityRole>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Admin Roles</h3>
+        <hr>
+        <a href="/admin/role/create" class="btn btn-outline-primary btn-sm mb-3">Add Role</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 100px;">Id</th>
+                    <th style="width: 50px;">Name</th>
+                    <th style="width: 50px;">Edit / Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count() > 0)
+                {
+                    @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>
+                                <a href="/Admin/role/@item.Id" class="btn btn-outline-primary btn-sm">Edit</a>
+
+                                <form action="/Admin/role/delete" method="post" style="display:inline;">
+                                    <input type="hidden" name="Id" value="@item.Id">
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <div clasclass="alert alert-warning"><h4>No Roles</h4></div>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

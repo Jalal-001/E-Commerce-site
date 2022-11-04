@@ -39,6 +39,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -83,6 +87,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Admin/RoleCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUm9sZUNyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Admin/RoleEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUm9sZUVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Admin/RoleList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUm9sZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Admin/UserList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Commerce/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVyY2VcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -125,6 +145,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Product/list.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxsaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Shared/AlertMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFsZXJ0TWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Jalal`s folder/General Projects/dotnetCore(c\#)/MVC/CommerceApp/CommerceApp/CommerceAppWebUI/Views/Shared/Components/Categories/Default.cshtml]

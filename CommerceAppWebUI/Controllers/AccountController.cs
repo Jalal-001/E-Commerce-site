@@ -1,9 +1,12 @@
 ﻿using CommerceAppWebUI.EmailServices;
+using CommerceAppWebUI.Extensions;
 using CommerceAppWebUI.Identity;
 using CommerceAppWebUI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Data;
 
 namespace CommerceAppWebUI.Controllers
 {
@@ -11,10 +14,11 @@ namespace CommerceAppWebUI.Controllers
 
     public class AccountController : Controller
     {
-
         private UserManager<User> _userManager;
         private SignInManager<User> _signInManager;
         private IEmailSender _emailSender;
+
+
         public AccountController(UserManager<User> userManager, SignInManager<User> signInManager,IEmailSender emailSender)
         {
             _userManager = userManager;
@@ -22,15 +26,6 @@ namespace CommerceAppWebUI.Controllers
             _emailSender = emailSender;
         }
 
-        public void CreateAlertMessage(string alertMsg, string alertType)
-        {
-            var msg = new AlertMessage()
-            {
-                Message = alertMsg,
-                AlertType = alertType
-            };
-            TempData["message"] = JsonConvert.SerializeObject(msg);
-        }
 
         [HttpGet]
         public IActionResult Login(string? returnUrl = null)
@@ -63,10 +58,15 @@ namespace CommerceAppWebUI.Controllers
 
             if (! await _userManager.IsEmailConfirmedAsync(user))
             {
-                CreateAlertMessage("Please verify your account using the email link!", "danger");
+                TempData.Put("message", new AlertMessage()
+                {
+                    AlertType="danger",
+                    Title="Account Verify",
+                    Message= "Please verify your account using the email link!"
+                });
+                
                 return View(model);
             }
-            
 
             if (result.Succeeded)
             {
@@ -91,6 +91,7 @@ namespace CommerceAppWebUI.Controllers
             {
                 return View(model);
             }
+
             var user = new User()
             {
                 FirstName = model.FirstName,
@@ -120,28 +121,44 @@ namespace CommerceAppWebUI.Controllers
             }
             return View(model);
         }
+
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return Redirect("~/");
         }
+
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
             if (userId == null || token == null)
                 return View();
+
             var user = await _userManager.FindByIdAsync(userId);
+
             if (user != null)
             {
                 var result = await _userManager.ConfirmEmailAsync(user, token);
+
                 if (result.Succeeded)
                 {
-                    CreateAlertMessage("Your account has been successfully verified", "success");
+                    TempData.Put("message", new AlertMessage()
+                    {
+                        AlertType= "success",
+                        Title= "Successfully verified",
+                        Message= "Your account has been successfully verified"
+                    });
                     return View();
                 }
             }
-            CreateAlertMessage("Your account could not be verified!", "danger");
+            TempData.Put("message", new AlertMessage()
+            {
+                AlertType = "danger",
+                Title = "Could not be verified",
+                Message = "Your account could not be verified!"
+            });
             return View();
         }
+
         public  IActionResult ForgotPassword()
         {
             return View();
@@ -175,7 +192,13 @@ namespace CommerceAppWebUI.Controllers
             string subject = $" <a href='https://localhost:7043{url}'>Reset Password</a> ";
             string htmlMessage = "Please reset password using the email link!";
             await _emailSender.SendEmailAsync(email, htmlMessage, subject);
-            CreateAlertMessage("A verification link has been sent to your account!", "warning");
+
+            TempData.Put("message", new AlertMessage()
+            {
+                AlertType = "success",
+                Title = "Verification link",
+                Message = "A verification link has been sent to your account!"
+            });
 
             return View();
         }
@@ -185,7 +208,12 @@ namespace CommerceAppWebUI.Controllers
         {
             if(userId == null || token == null)
             {
-                CreateAlertMessage("User not found!", "danger");
+                TempData.Put("message", new AlertMessage()
+                {
+                    AlertType = "danger",
+                    Title = "Not found",
+                    Message = "User not found!"
+                });
             }
             var model = new ResetPasswordModel { Token = token };
             return View();
@@ -195,17 +223,36 @@ namespace CommerceAppWebUI.Controllers
         public async Task<IActionResult>ResetPassword(ResetPasswordModel model)
         {
             var user = _userManager.FindByEmailAsync(model.Email);
-            if(user==null)
-                CreateAlertMessage("User not found!", "danger");
+
+            if (user == null)
+            {
+                TempData.Put("message", new AlertMessage()
+                {
+                    AlertType = "danger",
+                    Title = "not found",
+                    Message = "User not found!"
+                });
+            }
 
             var result = await _userManager.ResetPasswordAsync(await user, model.Token, model.Password);
 
             if (result.Succeeded)
             {
                 return RedirectToAction("Login", "Account");
-                CreateAlertMessage("Your password has been successfully updated", "success");
-
+                TempData.Put("message", new AlertMessage()
+                {
+                    AlertType = "success",
+                    Title = "Successfully updated",
+                    Message = "Your password has been successfully updated"
+                });
             }
+            return View();
+        }
+
+
+
+        public IActionResult AccessDenied()
+        {
             return View();
         }
     }

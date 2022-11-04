@@ -1,32 +1,129 @@
 ﻿using CommerceApp.Business.Abstract;
 using CommerceApp.Entity;
+using CommerceAppWebUI.Extensions;
+using CommerceAppWebUI.Identity;
 using CommerceAppWebUI.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace CommerceAppWebUI.Controllers
 {
+    //[Authorize(Roles ="Admin")]
     [Authorize]
-
     public class AdminController : Controller
     {
         private IProductService _productService;
         private ICategoryService _categoryService;
-        public AdminController(IProductService productService, ICategoryService categoryService)
+        private RoleManager<IdentityRole> _roleManager;
+        private UserManager<User> _userManager;
+        public AdminController(IProductService productService, ICategoryService categoryService,RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _roleManager = roleManager;
+            _userManager = userManager;
+        }
+        
+
+        public IActionResult UserList()
+        {
+            return View(_userManager.Users);
         }
 
-        public void CreateAlertMessage(string alertMsg,string alertType)
+        public IActionResult RoleList()
         {
-             var msg = new AlertMessage()
-             {
-                Message = alertMsg,
-                AlertType = alertType
-             };
-             TempData["message"] = JsonConvert.SerializeObject(msg);
+            return View(_roleManager.Roles);
+        }
+
+        [HttpGet]
+        public IActionResult RoleCreate()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult>RoleCreate(RoleModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _roleManager.CreateAsync(new IdentityRole(model.Name));
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("RoleList");
+                }
+            }
+            TempData.Put("message", new AlertMessage()
+            {
+                AlertType = "danger",
+                Title = "Create Error", 
+                Message = "An unknown error occurred!"
+            });
+            return View(model);
+        }
+
+        public async Task<IActionResult> RoleEdit(string id)
+        {
+            var role = await _roleManager.FindByIdAsync(id);
+
+            var members = new List<User>();
+            var nonMembers = new List<User>();
+
+            foreach (var user in _userManager.Users)
+            {
+                var list = await _userManager.IsInRoleAsync(user,role.Name)
+                    ? members : nonMembers;
+                list.Add(user);
+            }
+            var model = new RoleDetails()
+            {
+                Role =  role,
+                Members = members,
+                NonMembers = nonMembers
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RoleEdit(RoleEditModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach (var userId in model.IdsToAdd)
+                {
+                    var user = await _userManager.FindByIdAsync(userId);
+                    if(user!= null)
+                    {
+                        var result = await _userManager.AddToRoleAsync(user,model.RoleName);
+
+                        if (!result.Succeeded)
+                        {
+                            foreach (var error in result.Errors)
+                            {
+                                ModelState.AddModelError("", error.Description);
+                            }
+                        }
+                    }
+                }
+
+                foreach (var userId in model.IdsToDelete)
+                {
+                    var user = await _userManager.FindByIdAsync(userId);
+                    if (user != null)
+                    {
+                        var result = await _userManager.RemoveFromRoleAsync(user, model.RoleName);
+                        if (!result.Succeeded)
+                        {
+                            foreach (var error in result.Errors)
+                            {
+                                ModelState.AddModelError("", error.Description);
+                            }
+                        }
+                    }
+                }
+            }
+            return Redirect("/admin/role/" + model.RoleId);
         }
 
         public IActionResult ProductList()
@@ -41,7 +138,6 @@ namespace CommerceAppWebUI.Controllers
         [HttpGet]
         public IActionResult CreateProduct()
         {
-            
             return View();
         }
 
@@ -62,7 +158,12 @@ namespace CommerceAppWebUI.Controllers
                 
                 return RedirectToAction("ProductList");
 
-                CreateAlertMessage($"{entity.Name} succesfully created", "success");
+                TempData.Put("message", new AlertMessage()
+                {
+                    AlertType = "success",
+                    Title = "Succesfully created",
+                    Message = $"{entity.Name} succesfully created"
+                });
             }
             return View(model);
         }
@@ -129,9 +230,13 @@ namespace CommerceAppWebUI.Controllers
                 _productService.Update(entity, categoryIds);
 
                 // Alert Message
-                CreateAlertMessage($"{entity.Name} succesfully updated", "success");
+                TempData.Put("message", new AlertMessage()
+                {
+                    AlertType = "success",
+                    Title = "Succesfully updated",
+                    Message = $"{entity.Name} succesfully updated"
+                });
                 return RedirectToAction("ProductList");
-
             }
             return View(model);
            
@@ -144,9 +249,12 @@ namespace CommerceAppWebUI.Controllers
             _productService.Delete(entity);
 
             // Alert Message
-            CreateAlertMessage($"{entity.Name} succesfully deleted", "danger");
-
-
+            TempData.Put("message", new AlertMessage()
+            {
+                AlertType = "warning",
+                Title = "Succesfully updated",
+                Message = $"{entity.Name} succesfully deleted"
+            });
             return RedirectToAction("ProductList");
         }
 
@@ -159,7 +267,6 @@ namespace CommerceAppWebUI.Controllers
             {
                 Categories=_categoryService.GetAll()
             };
-
             return View(categoryListViewModel);
         }
 
@@ -182,13 +289,15 @@ namespace CommerceAppWebUI.Controllers
                 _categoryService.Create(category);
 
                 // Alert Message
-                CreateAlertMessage($"{category.Name} succesfully created", "success");
-
-
+                TempData.Put("message", new AlertMessage()
+                {
+                    AlertType = "success",
+                    Title = "Succesfully created",
+                    Message = $"{category.Name} succesfully created"
+                });
                 return RedirectToAction("CategoryList");
             }
             return View(model);
-           
         }
 
         [HttpGet]
@@ -209,7 +318,6 @@ namespace CommerceAppWebUI.Controllers
                 Url=category.Url,
                 Products=category.ProductCategories.Select(p=>p.Product).ToList()
             };
-
             return View(model);
         }
 
@@ -230,13 +338,15 @@ namespace CommerceAppWebUI.Controllers
                 _categoryService.Update(entity);
 
                 // Alert Message
-                CreateAlertMessage($"{entity.Name} succesfully updated", "success");
-
-
+                TempData.Put("message", new AlertMessage()
+                {
+                    AlertType = "success",
+                    Title = "Succesfully updated",
+                    Message = $"{entity.Name} succesfully updated"
+                });
                 return RedirectToAction("CategoryList");
             }
             return View(model);
-           
         }
 
         public IActionResult DeleteCategory(int id)
@@ -248,9 +358,12 @@ namespace CommerceAppWebUI.Controllers
             _categoryService.Delete(category);
 
             // Alert Message
-            CreateAlertMessage($"{category.Name} succesfully deleted", "danger");
-
-
+            TempData.Put("message", new AlertMessage()
+            {
+                AlertType = "warning",
+                Title = "Succesfully deleted",
+                Message = $"{category.Name} succesfully deleted"
+            });
             return RedirectToAction("CategoryList");
         }
 
@@ -260,5 +373,8 @@ namespace CommerceAppWebUI.Controllers
             _categoryService.DeleteProductFromCategory(categoryId, productId);
             return Redirect("/Admin/Categories" + categoryId);
         }
+
+
+        
     }
 }

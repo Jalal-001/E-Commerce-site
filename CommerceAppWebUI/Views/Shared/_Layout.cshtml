@@ -1,4 +1,5 @@
-﻿@using Newtonsoft.Json
+﻿@using CommerceAppWebUI.Extensions
+@using Newtonsoft.Json
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,15 +17,9 @@
 
             @if(TempData["message"]!=null)
             {
-                var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as string);  
+                <partial name="AlertMessage" model="@(TempData.Get<AlertMessage>("message"))"></partial>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="alert alert-@message.AlertType">
-                            @message.Message
-                        </div>
-                    </div>
-                </div>
+                var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as string);  
             }
 
             <div class="col-md-12">

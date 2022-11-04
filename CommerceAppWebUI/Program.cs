@@ -55,6 +55,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     };
 });
 
+// smtp emailSender
 builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(i =>
                 new SmtpEmailSender(
                     _configuration["EmailSender:Host"],
@@ -88,7 +89,30 @@ if (app.Environment.IsDevelopment())
 }
 
 // *Route*
-
+app.MapControllerRoute
+    (
+        name: "adminuserlist",
+        pattern: "admin/user/list",
+        defaults: new { controller = "Admin", action = "UserList" }
+    );
+app.MapControllerRoute
+    (
+        name: "adminrolelist",
+        pattern: "admin/role/list",
+        defaults: new { controller = "Admin", action = "RoleList" }
+    );
+app.MapControllerRoute
+    (
+        name: "admincreaterole",
+        pattern: "admin/role/create",
+        defaults: new { controller = "Admin", action = "RoleCreate" }
+    );
+app.MapControllerRoute
+    (
+        name: "adminroleedit",
+        pattern: "admin/role/{Id?}",
+        defaults: new { controller = "Admin", action = "RoleEdit" }
+    );
 app.MapControllerRoute
     (
         name: "adminproductlist",

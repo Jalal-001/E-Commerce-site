@@ -10,19 +10,31 @@
 
                 @if (User.Identity.IsAuthenticated)
                 {
+                   @* @if (User.IsInRole("Admin"))
+                    {*@
                         <li class="navbar-item ">
-                        <a asp-controller="admin" asp-action="productlist"  class="nav-link navbar-brand">Admin Products</a>
-                    </li>
+                            <a asp-controller="admin" asp-action="productlist"  class="nav-link navbar-brand">Admin Products</a>
+                        </li>
 
-                    <li class="navbar-item">
-                        <a asp-controller="admin" asp-action="categorylist"  class="nav-link navbar-brand">Admin Categories</a>
-                    </li>
+                        <li class="navbar-item">
+                            <a asp-controller="admin" asp-action="categorylist"  class="nav-link navbar-brand">Admin Categories</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a asp-controller="admin" asp-action="rolelist"  class="nav-link navbar-brand">Roles</a>
+                        </li> 
+                        <li class="navbar-item">
+                            <a asp-controller="admin" asp-action="userlist"  class="nav-link navbar-brand">Users</a>
+                        </li> 
+                    @*}*@
+                   
+
                     <li class="navbar-item">
                         <a asp-controller="" asp-action=""  class="nav-link navbar-brand">Orders</a>
                     </li>
                     <li class="navbar-item">
                         <a asp-controller="" asp-action=""  class="nav-link navbar-brand">Cart</a>
                     </li>
+                   
                 }
 
             </ul>
