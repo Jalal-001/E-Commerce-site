@@ -1,0 +1,75 @@
+﻿@model UserDetailsModel
+
+<h1 class="h3">Edit User</h1>
+<hr >
+
+<form asp-controller="Admin" asp-action="UserEdit" method="post">
+
+    <div class="row">
+        <div class="col-md-8">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" name="UserId" value="@Model.Id">
+
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 form-label" asp-for="@Model.FirstName"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.FirstName">
+                </div>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 form-label" asp-for="@Model.LastName"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.LastName">
+                </div>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 form-label" asp-for="@Model.UserName"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.UserName">
+                </div>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 form-label" asp-for="@Model.Email"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="@Model.Email">
+                </div>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row mb-3">
+                <div class="col-sm-10 offset-2">
+                    <button type="submit" class="btn btn-outline-primary">Save Chances</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            @*Nullreferenceexception xetalarinin onune kecmek ucun kontrol*@
+
+            @if (ViewBag.Roles != null)
+            {
+                @foreach (var rolename in ViewBag.Roles)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" 
+                            value="@rolename" id="@rolename" name="SelectedRoles"
+                            @(Model.SelectedRoles.Any(q=>q==rolename)?"checked":"")>
+                        <label class="form-check-label" for="@rolename">@rolename</label>
+                    </div>
+                }
+            }
+
+           <hr />
+
+           <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="@Model.EmailConfirmed">
+                <label class="form-check-label" asp-for="@Model.EmailConfirmed"></label>
+           </div>
+
+        </div>
+    <div/>
+</form>

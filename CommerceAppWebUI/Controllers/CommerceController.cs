@@ -8,10 +8,12 @@ namespace CommerceAppWebUI.Controllers
     public class CommerceController:Controller
     {
         private IProductService _productService;
+
         public CommerceController(IProductService productService)
         {
             _productService = productService;
         }
+
 
 
         public IActionResult list(string category,int page)

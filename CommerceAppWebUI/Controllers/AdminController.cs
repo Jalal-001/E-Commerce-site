@@ -6,30 +6,92 @@ using CommerceAppWebUI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 
 namespace CommerceAppWebUI.Controllers
 {
-    //[Authorize(Roles ="Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private IProductService _productService;
         private ICategoryService _categoryService;
         private RoleManager<IdentityRole> _roleManager;
         private UserManager<User> _userManager;
-        public AdminController(IProductService productService, ICategoryService categoryService,RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
+        public AdminController(IProductService productService, ICategoryService categoryService, RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
         {
             _productService = productService;
             _categoryService = categoryService;
             _roleManager = roleManager;
             _userManager = userManager;
         }
-        
+
 
         public IActionResult UserList()
         {
             return View(_userManager.Users);
+        }
+
+        public async Task<IActionResult> UserEdit(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user != null)
+            {
+                var selectedRoles = await _userManager.GetRolesAsync(user);
+                var roles = _roleManager.Roles.Select(a => a.Name);
+
+                ViewBag.Roles = roles;
+                return View(new UserDetailsModel()
+                {
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    EmailConfirmed = user.EmailConfirmed,
+                    SelectedRoles = selectedRoles
+                });
+            }
+            return Redirect("~/Admin/user/list");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UserEdit(UserDetailsModel model, IEnumerable<string> selectedRoles)
+        {
+
+            var user = await _userManager.FindByIdAsync(model.Id);
+            if (user != null)
+            {
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.UserName = model.UserName;
+                user.Email = model.Email;
+                user.EmailConfirmed = model.EmailConfirmed;
+
+                var result = await _userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                {
+                    var userRoles = await _userManager.GetRolesAsync(user);
+
+                    if (selectedRoles != null)
+                    {
+                        //await _userManager.AddToRolesAsync(user, selectedRoles.Except(userRoles).ToArray<string>());
+                        //await _userManager.RemoveFromRolesAsync(user, selectedRoles.Except(userRoles).ToArray<string>());
+
+                        await _userManager.AddToRolesAsync(user, selectedRoles);
+                        await _userManager.RemoveFromRolesAsync(user, selectedRoles);
+                        return Redirect("/Admin/user/list");
+
+                        TempData.Put("message", new AlertMessage()
+                        {
+                            AlertType = "success",
+                            Title = "Edit",
+                            Message = "Successfully Updated"
+                        });
+                    }
+                }
+            }
+            return View(model);
         }
 
         public IActionResult RoleList()
@@ -44,7 +106,7 @@ namespace CommerceAppWebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult>RoleCreate(RoleModel model)
+        public async Task<IActionResult> RoleCreate(RoleModel model)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +119,7 @@ namespace CommerceAppWebUI.Controllers
             TempData.Put("message", new AlertMessage()
             {
                 AlertType = "danger",
-                Title = "Create Error", 
+                Title = "Create Error",
                 Message = "An unknown error occurred!"
             });
             return View(model);
@@ -72,13 +134,13 @@ namespace CommerceAppWebUI.Controllers
 
             foreach (var user in _userManager.Users)
             {
-                var list = await _userManager.IsInRoleAsync(user,role.Name)
+                var list = await _userManager.IsInRoleAsync(user, role.Name)
                     ? members : nonMembers;
                 list.Add(user);
             }
             var model = new RoleDetails()
             {
-                Role =  role,
+                Role = role,
                 Members = members,
                 NonMembers = nonMembers
             };
@@ -88,42 +150,46 @@ namespace CommerceAppWebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> RoleEdit(RoleEditModel model)
         {
-            if (ModelState.IsValid)
+            foreach (var userId in model.IdsToAdd ?? new string[] { })
             {
-                foreach (var userId in model.IdsToAdd)
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user != null)
                 {
-                    var user = await _userManager.FindByIdAsync(userId);
-                    if(user!= null)
-                    {
-                        var result = await _userManager.AddToRoleAsync(user,model.RoleName);
+                    var result = await _userManager.AddToRoleAsync(user, model.RoleName);
 
-                        if (!result.Succeeded)
-                        {
-                            foreach (var error in result.Errors)
-                            {
-                                ModelState.AddModelError("", error.Description);
-                            }
-                        }
-                    }
-                }
-
-                foreach (var userId in model.IdsToDelete)
-                {
-                    var user = await _userManager.FindByIdAsync(userId);
-                    if (user != null)
+                    if (!result.Succeeded)
                     {
-                        var result = await _userManager.RemoveFromRoleAsync(user, model.RoleName);
-                        if (!result.Succeeded)
+                        foreach (var error in result.Errors)
                         {
-                            foreach (var error in result.Errors)
-                            {
-                                ModelState.AddModelError("", error.Description);
-                            }
+                            ModelState.AddModelError("", error.Description);
                         }
                     }
                 }
             }
+
+            foreach (var userId in model.IdsToDelete ?? new string[] { })
+            {
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user != null)
+                {
+                    var result = await _userManager.RemoveFromRoleAsync(user, model.RoleName);
+                    if (!result.Succeeded)
+                    {
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError("", error.Description);
+                        }
+                    }
+                }
+            }
+
             return Redirect("/admin/role/" + model.RoleId);
+            TempData.Put("message", new AlertMessage()
+            {
+                AlertType = "danger",
+                Title = "",
+                Message = "Error"
+            });
         }
 
         public IActionResult ProductList()
@@ -155,7 +221,7 @@ namespace CommerceAppWebUI.Controllers
                     ImgUrl = model.ImgUrl
                 };
                 _productService.Create(entity);
-                
+
                 return RedirectToAction("ProductList");
 
                 TempData.Put("message", new AlertMessage()
@@ -189,14 +255,14 @@ namespace CommerceAppWebUI.Controllers
                 Description = entity.Description,
                 ImgUrl = entity.ImgUrl,
 
-                SelectedCategories=entity.ProductCategories.Select(o=>o.Category).ToList()
+                SelectedCategories = entity.ProductCategories.Select(o => o.Category).ToList()
             };
             ViewBag.Categories = _categoryService.GetAll();
             return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult>  EditProduct(ProductModel model,int[] categoryIds,IFormFile file)
+        public async Task<IActionResult> EditProduct(ProductModel model, int[] categoryIds, IFormFile file)
         {
             if (ModelState.IsValid)
             {
@@ -239,7 +305,7 @@ namespace CommerceAppWebUI.Controllers
                 return RedirectToAction("ProductList");
             }
             return View(model);
-           
+
         }
         public IActionResult DeleteProduct(int productId)
         {
@@ -265,7 +331,7 @@ namespace CommerceAppWebUI.Controllers
         {
             var categoryListViewModel = new CategoryListViewModel()
             {
-                Categories=_categoryService.GetAll()
+                Categories = _categoryService.GetAll()
             };
             return View(categoryListViewModel);
         }
@@ -313,10 +379,10 @@ namespace CommerceAppWebUI.Controllers
 
             var model = new CategoryModel()
             {
-                CategoryId=category.CategoryId,
-                Name=category.Name,
-                Url=category.Url,
-                Products=category.ProductCategories.Select(p=>p.Product).ToList()
+                CategoryId = category.CategoryId,
+                Name = category.Name,
+                Url = category.Url,
+                Products = category.ProductCategories.Select(p => p.Product).ToList()
             };
             return View(model);
         }
@@ -351,8 +417,8 @@ namespace CommerceAppWebUI.Controllers
 
         public IActionResult DeleteCategory(int id)
         {
-            var category= _categoryService.GetById(id);
-            if(category == null)
+            var category = _categoryService.GetById(id);
+            if (category == null)
                 return BadRequest();
 
             _categoryService.Delete(category);
@@ -368,13 +434,13 @@ namespace CommerceAppWebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteProductFromCategory(int categoryId,int productId)
+        public IActionResult DeleteProductFromCategory(int categoryId, int productId)
         {
             _categoryService.DeleteProductFromCategory(categoryId, productId);
             return Redirect("/Admin/Categories" + categoryId);
         }
 
 
-        
+
     }
 }

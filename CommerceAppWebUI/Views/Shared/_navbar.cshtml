@@ -10,8 +10,8 @@
 
                 @if (User.Identity.IsAuthenticated)
                 {
-                   @* @if (User.IsInRole("Admin"))
-                    {*@
+                    @if (User.IsInRole("Admin"))
+                    {
                         <li class="navbar-item ">
                             <a asp-controller="admin" asp-action="productlist"  class="nav-link navbar-brand">Admin Products</a>
                         </li>
@@ -25,7 +25,7 @@
                         <li class="navbar-item">
                             <a asp-controller="admin" asp-action="userlist"  class="nav-link navbar-brand">Users</a>
                         </li> 
-                    @*}*@
+                    }
                    
 
                     <li class="navbar-item">

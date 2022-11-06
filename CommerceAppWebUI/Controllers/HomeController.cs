@@ -8,10 +8,13 @@ namespace CommerceAppWebUI.Controllers
     public class HomeController:Controller
     {
         private IProductService _productService;
+
         public HomeController(IProductService productService)
         {
             _productService = productService; 
         }
+
+
 
         public ActionResult index()
         {

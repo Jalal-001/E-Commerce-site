@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-md-12">
-       <form asp-controller="Admin" asp-action="RoleEdit" method="post">
+       <form asp-controller="Admin" asp-action="RoleEdit">
            <input type="hidden" name="RoleId" value="@Model.Role.Id">
            <input type="hidden" name="RoleName" value="@Model.Role.Name">
            <h6 class="bg-info text-white p-1">Add to @Model.Role.Name</h6>
