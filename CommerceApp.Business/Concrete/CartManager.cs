@@ -17,6 +17,21 @@ namespace CommerceApp.Business.Concrete
             _cartRepository = cartRepository;
         }
 
+        public void AddToCart(string userid, int productid, int quantity)
+        {
+            _cartRepository.AddToCart(userid, productid, quantity);
+        }
+
+        public void DeleteFromCart(string userId, int productId)
+        {
+            var cart=getCartByUserId(userId);
+            if (cart != null)
+            {
+                _cartRepository.DeleteFromCart(cart.Id, productId);
+            }
+            
+        }
+
         public Cart getCartByUserId(string userId)
         {
             return _cartRepository.getCartByUserId(userId);

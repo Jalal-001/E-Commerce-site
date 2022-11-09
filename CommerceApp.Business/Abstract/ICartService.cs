@@ -10,6 +10,8 @@ namespace CommerceApp.Business.Abstract
     public interface ICartService
     {
         void InitializeCart(string userId);
-        Cart getCartByUserId(string userId); 
+        Cart getCartByUserId(string userId);
+        void AddToCart(string userid, int productid, int quantity);
+        void DeleteFromCart(string userId, int productId);
     }
 }

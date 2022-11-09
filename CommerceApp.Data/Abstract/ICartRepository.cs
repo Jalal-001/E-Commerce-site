@@ -10,5 +10,7 @@ namespace CommerceApp.Data.Abstract
     public interface ICartRepository:IRepository<Cart>
     {
         Cart getCartByUserId(string userId);
+        void AddToCart(string userid, int productid, int quantity);
+        void DeleteFromCart(int cartId, int productId);
     }
 }

@@ -4,6 +4,10 @@
     {
         public int CartId { get; set; }
         public List<CartItemModel> CartItems { get; set; }
+        public Double TotalPrice()
+        {
+            return CartItems.Sum(r => r.Quantity * r.Price);
+        }
     }
 
     public class CartItemModel

@@ -1,40 +1,90 @@
 ﻿@model CartModel
 
 <h1 class="h3">Shopping Cart</h1>
-<hr />
-<div class="row">
-    <div class="col-md-8">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                    
-                @foreach (var item in Model.CartItems)
-                {
-                    <tr>
-                        <td><img src="~/img/@item.ImgUrl" width="50"></td>
-                        <td>@item.Name</td>
-                        <td>@item.Price</td>
-                        <td>@item.Quantity</td>
-                        <td>@(item.Quantity * item.Price)</td>
-                        <td>
-                            <button class="btn btn-danger">
-                                <i class="fa fa-times fa-fw"></i>
-                            </button>
-                        </td>
-                    </tr> 
-                }
-
-            </tbody>
-        </table>
+@if (Model.CartItems.Count==0)
+{
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-warning">
+                There are no  products in your cart!
+            </div>
+        </div>
     </div>
-    <div class="col-md-4"></div>
-</div>
+}
+else
+{
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <div class="text-left">
+               <h4>Cart Items</h4>
+            </div>
+            <hr />
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model.CartItems)
+                    {
+                        <tr>
+                            <td><img src="~/img/@item.ImgUrl" width="50"></td>
+                            <td>@item.Name</td>
+                            <td>@item.Price</td>
+                            <td>@item.Quantity</td>
+                            <td>@(item.Quantity * item.Price)</td>
+                            <td>
+                                <form action="/Cart/DeleteFromCart" method="post">
+                                    <input type="hidden" name="ProductId" value="@item.ProductId">
+                                    <button type="sumbit" class="btn btn-danger">
+                                        <i class="fa fa-times fa-fw"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr> 
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <div class="text-left">
+                <h4>Cart Summary</h4>
+            </div>
+            <hr />
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>Cart Total</td>
+                        <td>@Model.TotalPrice().ToString("c")</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping </td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td>Order Total</td>
+                        <td>@Model.TotalPrice().ToString("c")</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center mb-3">
+                <a href="/" class="btn btn-primary">
+                    <i class="fa fa-arrow-circle-left fa-fw"></i>Continue Shopping
+                </a>
+                <a href="/checkout" class="btn btn-primary">
+                    <i class="fa fa-arrow-circle-right fa-fw"></i>Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+}
+
+
