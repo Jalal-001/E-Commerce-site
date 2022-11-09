@@ -33,6 +33,15 @@ namespace CommerceApp.Data.Concrete.EfCore
             }
         }
 
+        public override void Update(Cart entity)
+        {
+            using (var context = new CommerceAppContext())
+            {
+                context.Carts.Update(entity);
+                context.SaveChanges();
+            }
+        }
+
         public void DeleteFromCart(int cartId, int productId)
         {
             using (var context = new CommerceAppContext())
@@ -50,14 +59,6 @@ namespace CommerceApp.Data.Concrete.EfCore
                     .Include(a => a.CartItems)
                     .ThenInclude(a => a.Product)
                     .FirstOrDefault(a => a.UserId == userId);
-            }
-        }
-        public override void Update(Cart entity)
-        {
-            using (var context = new CommerceAppContext())
-            {
-                context.Carts.Update(entity);
-                context.SaveChanges();
             }
         }
     }

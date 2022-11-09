@@ -3,6 +3,7 @@ using System;
 using CommerceApp.Data.Concrete.EfCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CommerceApp.Data.Migrations
 {
     [DbContext(typeof(CommerceAppContext))]
-    partial class CommerceAppContextModelSnapshot : ModelSnapshot
+    [Migration("20221109171054_AddingOrderEntity")]
+    partial class AddingOrderEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");

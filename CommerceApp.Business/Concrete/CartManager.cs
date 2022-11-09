@@ -24,6 +24,8 @@ namespace CommerceApp.Business.Concrete
 
         public void DeleteFromCart(string userId, int productId)
         {
+            // Elaqeli cedvelden melumati silmek ucun ilk once cart tapilmalidir.
+            // sonra cart-in id-si ve product-in id-si verilerek silinir.
             var cart=getCartByUserId(userId);
             if (cart != null)
             {
