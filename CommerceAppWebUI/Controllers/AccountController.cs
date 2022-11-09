@@ -1,4 +1,6 @@
-﻿using CommerceAppWebUI.EmailServices;
+﻿using CommerceApp.Business.Abstract;
+using CommerceApp.Business.Concrete;
+using CommerceAppWebUI.EmailServices;
 using CommerceAppWebUI.Extensions;
 using CommerceAppWebUI.Identity;
 using CommerceAppWebUI.Models;
@@ -17,13 +19,15 @@ namespace CommerceAppWebUI.Controllers
         private UserManager<User> _userManager;
         private SignInManager<User> _signInManager;
         private IEmailSender _emailSender;
+        private ICartService _cartService;
 
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager,IEmailSender emailSender)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager,IEmailSender emailSender, ICartService cartService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
+            _cartService= cartService;
         }
 
 
@@ -141,6 +145,9 @@ namespace CommerceAppWebUI.Controllers
 
                 if (result.Succeeded)
                 {
+                    // create cart object
+                    _cartService.InitializeCart(userId);
+
                     TempData.Put("message", new AlertMessage()
                     {
                         AlertType= "success",

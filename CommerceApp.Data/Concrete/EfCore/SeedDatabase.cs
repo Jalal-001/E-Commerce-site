@@ -10,8 +10,8 @@ namespace CommerceApp.Data.Concrete.EfCore
 {
     public static class SeedDatabase
     {
-       public static void Seed()
-       {
+        public static void Seed()
+        {
             var context = new CommerceAppContext();
             if (context.Database.GetPendingMigrations().Count() == 0)
             {

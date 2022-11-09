@@ -14,7 +14,20 @@
             <a asp-controller="Commerce" asp-action="List" asp-route-category="@item.Url" class=" btn btn-link p-0 mb-0">@item.Name</a>
         }
     <p class="">@Model.Product.Price $</p>
-    <button type="submit" class="btn btn-primary">Add To Card</button>
+
+    <form asp-controller="Cart" asp-action="AddToCart" method="post" style="display:inline"> 
+        <input type="hidden" name="productId" value="@Model.Product.ProductId">
+        <input type="hidden" name="quantity" value="1">
+        <div class="input-group" style="width:200px">
+            <input type="number" name="quantity" class="form-control" value="1" min="1" step="1">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-cart-plus"></i>Add To Cart
+                </button>
+            </div>
+        </div>
+    </form>
+
 </div>
     <div class="row">
         <div class="col=md-12">

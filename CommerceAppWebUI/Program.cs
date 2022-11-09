@@ -69,30 +69,48 @@ builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(i =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IProductRepository, EfCoreProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
+builder.Services.AddScoped<ICartRepository, EfCoreCartRepository>();
 
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
+builder.Services.AddScoped<ICartService, CartManager>();
 
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
+
+//Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     SeedDatabase.Seed();
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
+
 if (app.Environment.IsDevelopment())
 {
-    SeedDatabase.Seed();
-}
-void Configure(IApplicationBuilder app, IWebHostEnvironment env, IConfiguration configuration, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
-{
-    SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
+    //SeedDatabase.Seed();
 }
 
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+using (var scope = scopeFactory.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+    var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
+    //SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
+}
+
+
 // *Route*
+
+app.MapControllerRoute
+    (
+        name: "car",
+        pattern: "cart",
+        defaults: new { controller = "Cart", action = "Index" }
+    );
 app.MapControllerRoute
     (
         name: "adminuserlist",

@@ -55,31 +55,30 @@ namespace CommerceAppWebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UserEdit(UserDetailsModel model, IEnumerable<string> selectedRoles)
+        public async Task<IActionResult> UserEdit(UserDetailsModel model, string[] selectedRoles)
         {
-
-            var user = await _userManager.FindByIdAsync(model.Id);
-            if (user != null)
+            if (ModelState.IsValid)
             {
-                user.FirstName = model.FirstName;
-                user.LastName = model.LastName;
-                user.UserName = model.UserName;
-                user.Email = model.Email;
-                user.EmailConfirmed = model.EmailConfirmed;
 
-                var result = await _userManager.UpdateAsync(user);
-
-                if (result.Succeeded)
+                var user = await _userManager.FindByIdAsync(model.Id);
+                if (user != null)
                 {
-                    var userRoles = await _userManager.GetRolesAsync(user);
+                    user.FirstName = model.FirstName;
+                    user.LastName = model.LastName;
+                    user.UserName = model.UserName;
+                    user.Email = model.Email;
+                    user.EmailConfirmed = model.EmailConfirmed;
 
-                    if (selectedRoles != null)
+                    var result = await _userManager.UpdateAsync(user);
+
+                    if (result.Succeeded)
                     {
-                        //await _userManager.AddToRolesAsync(user, selectedRoles.Except(userRoles).ToArray<string>());
-                        //await _userManager.RemoveFromRolesAsync(user, selectedRoles.Except(userRoles).ToArray<string>());
+                        var userRoles = await _userManager.GetRolesAsync(user);
 
-                        await _userManager.AddToRolesAsync(user, selectedRoles);
-                        await _userManager.RemoveFromRolesAsync(user, selectedRoles);
+                        selectedRoles = selectedRoles ?? new string[] { };
+                        await _userManager.AddToRolesAsync(user, selectedRoles.Except(userRoles).ToArray<string>());
+                        await _userManager.RemoveFromRolesAsync(user, userRoles.Except(selectedRoles).ToArray<string>());
+
                         return Redirect("/Admin/user/list");
 
                         TempData.Put("message", new AlertMessage()
@@ -90,7 +89,9 @@ namespace CommerceAppWebUI.Controllers
                         });
                     }
                 }
+                return Redirect("/Admin/user/list");
             }
+
             return View(model);
         }
 
