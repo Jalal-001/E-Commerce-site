@@ -126,3 +126,4 @@ D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\Co
 D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Jalal`s folder\General Projects\dotnetCore(c#)\MVC\CommerceApp\CommerceApp\CommerceAppWebUI\bin\Debug\net6.0\Iyzipay.dll

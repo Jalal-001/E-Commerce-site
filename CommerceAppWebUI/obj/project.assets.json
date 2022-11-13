@@ -15,6 +15,18 @@
           }
         }
       },
+      "Iyzipay/2.1.44": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Iyzipay.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Iyzipay.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.10": {
         "type": "package",
         "compile": {
@@ -703,6 +715,20 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Iyzipay/2.1.44": {
+      "sha512": "19iJyWQHPoGBPBXymZWjHRuDoLH6jwMUP8YrSosJn8hIheOXNzGTI/5hamNxPWXdT2TeC2nbQLTbCpdxmTCH2g==",
+      "type": "package",
+      "path": "iyzipay/2.1.44",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "iyzipay.2.1.44.nupkg.sha512",
+        "iyzipay.nuspec",
+        "lib/net45/Iyzipay.dll",
+        "lib/netstandard1.3/Iyzipay.dll",
+        "lib/netstandard2.0/Iyzipay.dll"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.10": {
@@ -1485,6 +1511,7 @@
     "net6.0": [
       "CommerceApp.Business >= 1.0.0",
       "CommerceApp.Data >= 1.0.0",
+      "Iyzipay >= 2.1.44",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.9",
       "Newtonsoft.Json >= 13.0.1"
@@ -1536,6 +1563,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Iyzipay": {
+            "target": "Package",
+            "version": "[2.1.44, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.10, )"

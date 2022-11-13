@@ -22,16 +22,20 @@ namespace CommerceApp.Business.Concrete
             _cartRepository.AddToCart(userid, productid, quantity);
         }
 
+        public void ClearCart(int cartId)
+        {
+            _cartRepository.ClearCart(cartId);
+        }
+
         public void DeleteFromCart(string userId, int productId)
         {
             // Elaqeli cedvelden melumati silmek ucun ilk once cart tapilmalidir.
             // sonra cart-in id-si ve product-in id-si verilerek silinir.
-            var cart=getCartByUserId(userId);
+            var cart = getCartByUserId(userId);
             if (cart != null)
             {
                 _cartRepository.DeleteFromCart(cart.Id, productId);
             }
-            
         }
 
         public Cart getCartByUserId(string userId)
@@ -41,7 +45,7 @@ namespace CommerceApp.Business.Concrete
 
         public void InitializeCart(string userId)
         {
-            _cartRepository.Create(new Cart { UserId=userId });
+            _cartRepository.Create(new Cart { UserId = userId });
         }
     }
 }

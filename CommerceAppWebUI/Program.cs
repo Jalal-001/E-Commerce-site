@@ -70,10 +70,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IProductRepository, EfCoreProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
 builder.Services.AddScoped<ICartRepository, EfCoreCartRepository>();
+builder.Services.AddScoped<IOrderRepository, EfCoreOrderRepository>();
 
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICartService, CartManager>();
+builder.Services.AddScoped<IOrderService, OrderManager>();
 
 
 var app = builder.Build();
@@ -105,6 +107,12 @@ using (var scope = scopeFactory.CreateScope())
 
 // *Route*
 
+app.MapControllerRoute
+    (
+        name: "checkout",
+        pattern: "checkout",
+        defaults: new { controller = "Cart", action = "Checkout" }
+    );
 app.MapControllerRoute
     (
         name: "car",

@@ -12,5 +12,6 @@ namespace CommerceApp.Data.Abstract
         Cart getCartByUserId(string userId);
         void AddToCart(string userid, int productid, int quantity);
         void DeleteFromCart(int cartId, int productId);
+        void ClearCart(int cartId);
     }
 }

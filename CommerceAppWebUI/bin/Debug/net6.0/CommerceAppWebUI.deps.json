@@ -10,6 +10,7 @@
         "dependencies": {
           "CommerceApp.Business": "1.0.0",
           "CommerceApp.Data": "1.0.0",
+          "Iyzipay": "2.1.44",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.10",
           "Microsoft.EntityFrameworkCore.Design": "6.0.9",
           "Newtonsoft.Json": "13.0.1"
@@ -23,6 +24,17 @@
           "lib/netstandard2.0/Humanizer.dll": {
             "assemblyVersion": "2.8.0.0",
             "fileVersion": "2.8.26.1919"
+          }
+        }
+      },
+      "Iyzipay/2.1.44": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Iyzipay.dll": {
+            "assemblyVersion": "2.1.44.0",
+            "fileVersion": "2.1.44.0"
           }
         }
       },
@@ -421,6 +433,13 @@
       "sha512": "sha512-OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "path": "humanizer.core/2.8.26",
       "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
+    },
+    "Iyzipay/2.1.44": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-19iJyWQHPoGBPBXymZWjHRuDoLH6jwMUP8YrSosJn8hIheOXNzGTI/5hamNxPWXdT2TeC2nbQLTbCpdxmTCH2g==",
+      "path": "iyzipay/2.1.44",
+      "hashPath": "iyzipay.2.1.44.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.10": {
       "type": "package",

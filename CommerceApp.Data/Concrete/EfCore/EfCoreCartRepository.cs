@@ -61,5 +61,14 @@ namespace CommerceApp.Data.Concrete.EfCore
                     .FirstOrDefault(a => a.UserId == userId);
             }
         }
+
+        public void ClearCart(int cartId)
+        {
+            using(var context = new CommerceAppContext())
+            {
+                var cmd = "Delete from CartItems where CartId=@p0";
+                context.Database.ExecuteSqlRaw(cmd, cartId);
+            }
+        }
     }
 }

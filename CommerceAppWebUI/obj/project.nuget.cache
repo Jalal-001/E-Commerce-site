@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "CkQmuENfwW+6krnBhqtEjGD5RRd56oDHVqq6K2KIArgqignq/IH+xsGAVibzezSrj+EuSWO0BXLVrbO8ym/5yA==",
+  "dgSpecHash": "VBmejbNUmzpUhilvV6CgQu7bMGGb94ydSqp2p22WK3idUeQGPbrNhsdxL0uizrDFu0E/SsFLOSlHuN30x0xI+g==",
   "success": true,
   "projectFilePath": "D:\\Jalal`s folder\\General Projects\\dotnetCore(c#)\\MVC\\CommerceApp\\CommerceApp\\CommerceAppWebUI\\CommerceAppWebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\iyzipay\\2.1.44\\iyzipay.2.1.44.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.10\\microsoft.aspnetcore.cryptography.internal.6.0.10.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.10\\microsoft.aspnetcore.cryptography.keyderivation.6.0.10.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.10\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.10.nupkg.sha512",
