@@ -11,20 +11,20 @@ namespace CommerceApp.Business.Concrete
 {
     public class CartManager : ICartService
     {
-        private ICartRepository _cartRepository;
-        public CartManager(ICartRepository cartRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public CartManager(IUnitOfWork unitOfWork)
         {
-            _cartRepository = cartRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public void AddToCart(string userid, int productid, int quantity)
         {
-            _cartRepository.AddToCart(userid, productid, quantity);
+            _unitOfWork.Carts.AddToCart(userid, productid, quantity);
         }
 
         public void ClearCart(int cartId)
         {
-            _cartRepository.ClearCart(cartId);
+            _unitOfWork.Carts.ClearCart(cartId);
         }
 
         public void DeleteFromCart(string userId, int productId)
@@ -34,18 +34,19 @@ namespace CommerceApp.Business.Concrete
             var cart = getCartByUserId(userId);
             if (cart != null)
             {
-                _cartRepository.DeleteFromCart(cart.Id, productId);
+                _unitOfWork.Carts.DeleteFromCart(cart.Id, productId);
             }
         }
 
         public Cart getCartByUserId(string userId)
         {
-            return _cartRepository.getCartByUserId(userId);
+            return _unitOfWork.Carts.getCartByUserId(userId);
         }
 
         public void InitializeCart(string userId)
         {
-            _cartRepository.Create(new Cart { UserId = userId });
+            _unitOfWork.Carts.Create(new Cart { UserId = userId });
+            _unitOfWork.Save();
         }
     }
 }

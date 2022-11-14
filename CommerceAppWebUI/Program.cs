@@ -20,7 +20,9 @@ _configuration = builder.Configuration;
 // *** Add services to the container (For MVC) ***
 
 // Identity
-builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlite("Data Source=CommerceAppDb"));
+builder.Services.AddDbContext<CommerceAppContext>(options => options.UseSqlite(_configuration.GetConnectionString("Sqlite")));
+builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlite(_configuration.GetConnectionString("Sqlite")));
+
 builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
 
 builder.Services.Configure<IdentityOptions>(options =>
@@ -67,10 +69,12 @@ builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(i =>
 
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IProductRepository, EfCoreProductRepository>();
-builder.Services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
-builder.Services.AddScoped<ICartRepository, EfCoreCartRepository>();
-builder.Services.AddScoped<IOrderRepository, EfCoreOrderRepository>();
+
+//builder.Services.AddScoped<IProductRepository, EfCoreProductRepository>();
+//builder.Services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
+//builder.Services.AddScoped<ICartRepository, EfCoreCartRepository>();
+//builder.Services.AddScoped<IOrderRepository, EfCoreOrderRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
