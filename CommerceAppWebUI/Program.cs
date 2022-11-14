@@ -106,7 +106,12 @@ using (var scope = scopeFactory.CreateScope())
 
 
 // *Route*
-
+app.MapControllerRoute
+    (
+        name: "orders",
+        pattern: "orders",
+        defaults: new { controller = "Order", action = "GetOrders" }
+    );
 app.MapControllerRoute
     (
         name: "checkout",

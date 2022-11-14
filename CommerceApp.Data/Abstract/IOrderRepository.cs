@@ -9,6 +9,6 @@ namespace CommerceApp.Data.Abstract
 {
     public interface IOrderRepository:IRepository<Order>
     {
-        List<Order> GetPopularOrders();
+        List<Order> GetOrders(string userId);
     }
 }

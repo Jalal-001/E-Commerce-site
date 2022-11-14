@@ -1,0 +1,62 @@
+﻿@model List<OrderListModel>
+
+    <h1 class="h4">Orders</h1>
+    <hr />
+
+@if (Model.Count != 0)
+{
+    @foreach (var order in Model)
+    {
+        <table class="table table-bordered table-sm mb-3">
+
+            <thead class="bg-success">
+                <tr>
+                    <td colspan="2">Order Id: #@order.OrderNumber</td>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in order.OrderItems)
+                {
+                    <tr>
+                        <td><img src="~/img/@item.ImgUrl" width="50"></td>
+                        <td>@item.Name</td>
+                        <td>@item.Price</td>
+                        <td>@item.Quantity</td>
+                    </tr> 
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="2">Customer Name</td>
+                    <td>@order.FirstName @order.LastName</td>
+                    <td rowspan="6">Total: @order.TotalPrice().ToString("c")</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Address:</td>
+                    <td>@order.Address</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Email:</td>
+                    <td>@order.Email</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Phone:</td>
+                    <td>@order.Phone</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Order Status:</td>
+                    <td>@order.OrderState</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Payment Type:</td>
+                    <td>@order.EnumPaymentType</td>
+                </tr>
+            </tfoot>
+        </table>
+    }
+
+}

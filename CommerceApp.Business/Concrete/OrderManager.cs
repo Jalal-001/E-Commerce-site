@@ -17,9 +17,15 @@ namespace CommerceApp.Business.Concrete
             _orderRepository = orderRepository;
         }
 
+
         public void Create(Order order)
         {
             _orderRepository.Create(order);
+        }
+
+        public List<Order> GetOrders(string userId)
+        {
+            return _orderRepository.GetOrders(userId);
         }
     }
 }

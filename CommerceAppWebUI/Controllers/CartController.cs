@@ -48,12 +48,6 @@ namespace CommerceAppWebUI.Controllers
 
                 }).ToList()
             });
-
-            void PossibleDereferenceNullExamples(string? message)
-            {
-                Console.WriteLine(message.Length); // CS8602
-
-            }
         }
 
         [HttpPost]
@@ -135,11 +129,13 @@ namespace CommerceAppWebUI.Controllers
             return View(model);
         }
 
+        // Clear cart after order
         private void ClearCart(int cartId)
         {
             _cartService.ClearCart(cartId);
         }
 
+        // Save order in DB
         private void SaveOrder(OrderModel model, Payment payment, string userId)
         {
             var order = new Order();
@@ -174,6 +170,7 @@ namespace CommerceAppWebUI.Controllers
             _orderService.Create(order);
         }
 
+        // Payment
         private Payment PaymentProcess(OrderModel model)
         {
             Options options = new Options();
@@ -193,7 +190,7 @@ namespace CommerceAppWebUI.Controllers
             request.PaymentGroup = PaymentGroup.PRODUCT.ToString();
 
             PaymentCard paymentCard = new PaymentCard();
-            paymentCard.CardHolderName = "Gulu";
+            paymentCard.CardHolderName = "Ali";
             // paymentCard.CardNumber = model.CardNumber;
             // paymentCard.ExpireMonth = model.ExpirationMonth;
             // paymentCard.ExpireYear = model.ExpirationYear;
