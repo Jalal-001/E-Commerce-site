@@ -15,6 +15,7 @@ namespace CommerceApp.Entity
         public double Price { get; set; }
         public string Description { get; set; }
         public string ImgUrl { get; set; }
+        public DateTime DateAdded { get; set; }
         public bool IsApproved { get; set; } = false;
         public bool IsHomePage { get; set; } = false;
         public List<ProductCategory> ProductCategories { get; set; }

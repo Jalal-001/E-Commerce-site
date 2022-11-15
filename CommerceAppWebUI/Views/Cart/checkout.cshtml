@@ -15,12 +15,14 @@
                         <label class="col-sm-2 form-label" asp-for="@Model.FirstName"></label>
                         <input class="form-control" asp-for="@Model.FirstName" />
                     </div>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="col-sm-2 form-label" asp-for="@Model.LastName"></label>
                         <input class="form-control" asp-for="@Model.LastName" />
                     </div>
+                    <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
             </div>
 
@@ -29,6 +31,7 @@
                     <label class="col-sm-2 form-label" asp-for="@Model.Address"></label>
                     <textarea class="form-control" asp-for="@Model.Address"></textarea>
                 </div>
+                <span asp-validation-for="Address" class="text-danger"></span>
             </div>
 
             <div class="row mb-3">
@@ -44,6 +47,9 @@
                     <label class="col-sm-2 form-label" asp-for="@Model.Email"></label>
                     <input class="form-control" asp-for="@Model.Email" />
                 </div>
+                <span asp-validation-for="City" class="text-danger"></span>
+                <span asp-validation-for="Phone" class="text-danger"></span>
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
             <h4 class="mb-3">Card Details</h4>
@@ -55,12 +61,14 @@
                         <label class="col-sm-2 form-label" asp-for="@Model.CardName"></label>
                         <input class="form-control" asp-for="@Model.CardName" />
                     </div>
+                    <span asp-validation-for="CardName" class="text-danger"></span>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="col-sm-2 form-label" asp-for="@Model.CardNumber"></label>
                         <input class="form-control" asp-for="@Model.CardNumber" />
                     </div>
+                    <span asp-validation-for="CardNumber" class="text-danger"></span>
                 </div>
             </div>
            
@@ -77,6 +85,9 @@
                     <label class="col-sm-2 form-label" asp-for="@Model.Cvc"></label>
                     <input class="form-control" asp-for="@Model.Cvc" />
                 </div>
+                <span asp-validation-for="ExpirationMonth" class="text-danger"></span>
+                <span asp-validation-for="ExpirationYear" class="text-danger"></span>
+                <span asp-validation-for="Cvc" class="text-danger"></span>
             </div>
 
             <hr class="mb-3" />

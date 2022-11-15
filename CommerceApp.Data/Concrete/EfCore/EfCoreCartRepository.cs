@@ -11,13 +11,13 @@ namespace CommerceApp.Data.Concrete.EfCore
 {
     public class EfCoreCartRepository : EfCoreGenericRepository<Cart>, ICartRepository
     {
-        public EfCoreCartRepository(CommerceAppContext context):base(context)
+        public EfCoreCartRepository(CommerceAppContext context) : base(context)
         {
 
         }
         private CommerceAppContext context
         {
-            get { return (CommerceAppContext)base.context;}
+            get { return (CommerceAppContext)base.context; }
         }
 
         public void AddToCart(string userid, int productid, int quantity)
@@ -45,6 +45,9 @@ namespace CommerceApp.Data.Concrete.EfCore
         public override void Update(Cart entity)
         {
             context.Carts.Update(entity);
+            context.SaveChanges();
+            // Burada Update override olundugu ucun 'SaveChanges' xususile cagirilmalidir.
+            // Digerlerinde ise '_UnitOfWork.Save()'
         }
 
         public void DeleteFromCart(int cartId, int productId)

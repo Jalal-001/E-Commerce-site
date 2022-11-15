@@ -64,15 +64,43 @@ namespace CommerceApp.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasMaxLength(20)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Url")
                         .IsRequired()
+                        .HasMaxLength(40)
                         .HasColumnType("TEXT");
 
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            Name = "Phone",
+                            Url = "phone"
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            Name = "Computer",
+                            Url = "computer"
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            Name = "Electronic",
+                            Url = "electronic"
+                        },
+                        new
+                        {
+                            CategoryId = 4,
+                            Name = "Tv & Audio ",
+                            Url = "tv-audio"
+                        });
                 });
 
             modelBuilder.Entity("CommerceApp.Entity.Order", b =>
@@ -83,10 +111,12 @@ namespace CommerceApp.Data.Migrations
 
                     b.Property<string>("Address")
                         .IsRequired()
+                        .HasMaxLength(500)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("City")
                         .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ConversationId")
@@ -95,6 +125,7 @@ namespace CommerceApp.Data.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("EnumPaymentType")
@@ -102,18 +133,23 @@ namespace CommerceApp.Data.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
+                        .HasMaxLength(30)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
                         .IsRequired()
+                        .HasMaxLength(30)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Note")
                         .IsRequired()
+                        .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("OrderDate")
-                        .HasColumnType("TEXT");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasDefaultValueSql("Date('now')");
 
                     b.Property<string>("OrderNumber")
                         .IsRequired()
@@ -128,6 +164,7 @@ namespace CommerceApp.Data.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired()
+                        .HasMaxLength(20)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserId")
@@ -172,6 +209,11 @@ namespace CommerceApp.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("DateAdded")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasDefaultValueSql("Date('now')");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -188,6 +230,7 @@ namespace CommerceApp.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Price")
@@ -200,6 +243,80 @@ namespace CommerceApp.Data.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = 1,
+                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Good Devices",
+                            ImgUrl = "iphoneX.jpeg",
+                            IsApproved = true,
+                            IsHomePage = true,
+                            Name = "Iphone X",
+                            Price = 1000.0,
+                            Url = "iphone-x"
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Good Devices",
+                            ImgUrl = "iphoneXR.jpg",
+                            IsApproved = true,
+                            IsHomePage = true,
+                            Name = "Iphone XR",
+                            Price = 1200.0,
+                            Url = "iphone-xr"
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Good Devices",
+                            ImgUrl = "iphone12.jpg",
+                            IsApproved = true,
+                            IsHomePage = true,
+                            Name = "Iphone 12",
+                            Price = 1500.0,
+                            Url = "iphone-12"
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Good Devices",
+                            ImgUrl = "iphone13.png",
+                            IsApproved = true,
+                            IsHomePage = true,
+                            Name = "Iphone 13",
+                            Price = 1700.0,
+                            Url = "iphone-13"
+                        },
+                        new
+                        {
+                            ProductId = 5,
+                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Good Devices",
+                            ImgUrl = "lenova1.jpg",
+                            IsApproved = true,
+                            IsHomePage = true,
+                            Name = "Lenova Idepad 3",
+                            Price = 1300.0,
+                            Url = "lenova-idepad-3"
+                        },
+                        new
+                        {
+                            ProductId = 6,
+                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Good Devices",
+                            ImgUrl = "lenova1.jpg",
+                            IsApproved = true,
+                            IsHomePage = true,
+                            Name = "Lenova Idepad 5",
+                            Price = 1550.0,
+                            Url = "lenova-idepad-5"
+                        });
                 });
 
             modelBuilder.Entity("CommerceApp.Entity.ProductCategory", b =>
@@ -215,6 +332,68 @@ namespace CommerceApp.Data.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductCategory");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            CategoryId = 1,
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            CategoryId = 1,
+                            ProductId = 3
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            ProductId = 3
+                        },
+                        new
+                        {
+                            CategoryId = 1,
+                            ProductId = 4
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            ProductId = 4
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            ProductId = 5
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            ProductId = 5
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            ProductId = 6
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            ProductId = 6
+                        });
                 });
 
             modelBuilder.Entity("CommerceApp.Entity.CartItem", b =>

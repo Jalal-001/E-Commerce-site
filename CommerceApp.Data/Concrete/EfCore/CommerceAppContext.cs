@@ -1,4 +1,5 @@
-﻿using CommerceApp.Entity;
+﻿using CommerceApp.Data.Configurations;
+using CommerceApp.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace CommerceApp.Data.Concrete.EfCore
         {
 
         }
+
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories{ get; set; }
         public DbSet<Cart> Carts{ get; set; }
@@ -21,11 +23,17 @@ namespace CommerceApp.Data.Concrete.EfCore
         public DbSet<Order> Orders{ get; set; }
         public DbSet<OrderItem> OrderItems{ get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder options)
-        //  => options.UseSqlite("Data Source=CommerceAppDb");
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-            => modelBuilder.Entity<ProductCategory>()
-            .HasKey(c => new {c.CategoryId,c.ProductId});
+        {
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new CartConfiguration());
+            modelBuilder.ApplyConfiguration(new CartItemConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderItemConfiguration());
+
+            modelBuilder.Seed();
+        }
     }
 }

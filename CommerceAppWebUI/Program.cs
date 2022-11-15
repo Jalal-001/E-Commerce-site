@@ -70,10 +70,6 @@ builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(i =>
 
 builder.Services.AddControllersWithViews();
 
-//builder.Services.AddScoped<IProductRepository, EfCoreProductRepository>();
-//builder.Services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
-//builder.Services.AddScoped<ICartRepository, EfCoreCartRepository>();
-//builder.Services.AddScoped<IOrderRepository, EfCoreOrderRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<IProductService, ProductManager>();
@@ -81,31 +77,25 @@ builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICartService, CartManager>();
 builder.Services.AddScoped<IOrderService, OrderManager>();
 
-
 var app = builder.Build();
-
 
 
 //Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    SeedDatabase.Seed();
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
 
-if (app.Environment.IsDevelopment())
-{
-    //SeedDatabase.Seed();
-}
 
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
 using (var scope = scopeFactory.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+    var cartService = scope.ServiceProvider.GetRequiredService<ICartService>();
     var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
-    //SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
+    SeedIdentity.Seed(userManager, roleManager,cartService, configuration).Wait();
 }
 
 
