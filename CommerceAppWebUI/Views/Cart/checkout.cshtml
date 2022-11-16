@@ -38,23 +38,26 @@
                 <div class="col-md-4">
                     <label class="col-sm-2 form-label" asp-for="@Model.City"></label>
                     <input class="form-control" asp-for="@Model.City" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+
                 </div>
                 <div class="col-md-4">
                     <label class="col-sm-2 form-label" asp-for="@Model.Phone"></label>
                     <input class="form-control" asp-for="@Model.Phone" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+
                 </div>
                 <div class="col-md-4">
                     <label class="col-sm-2 form-label" asp-for="@Model.Email"></label>
                     <input class="form-control" asp-for="@Model.Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+
                 </div>
-                <span asp-validation-for="City" class="text-danger"></span>
-                <span asp-validation-for="Phone" class="text-danger"></span>
-                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
             <h4 class="mb-3">Card Details</h4>
             <hr class="mb-3" />
-            
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-3">
@@ -71,23 +74,26 @@
                     <span asp-validation-for="CardNumber" class="text-danger"></span>
                 </div>
             </div>
-           
+
             <div class="row mb-3">
                 <div class="col-md-4">
                     <label class="col-sm-2 form-label" asp-for="@Model.ExpirationMonth"></label>
                     <input class="form-control" asp-for="@Model.ExpirationMonth" />
+                    <span asp-validation-for="ExpirationMonth" class="text-danger"></span>
+
                 </div>
                 <div class="col-md-4">
                     <label class="col-sm-2 form-label" asp-for="@Model.ExpirationYear"></label>
                     <input class="form-control" asp-for="@Model.ExpirationYear" />
+                    <span asp-validation-for="ExpirationYear" class="text-danger"></span>
+
                 </div>
                 <div class="col-md-4">
                     <label class="col-sm-2 form-label" asp-for="@Model.Cvc"></label>
                     <input class="form-control" asp-for="@Model.Cvc" />
+                    <span asp-validation-for="Cvc" class="text-danger"></span>
+
                 </div>
-                <span asp-validation-for="ExpirationMonth" class="text-danger"></span>
-                <span asp-validation-for="ExpirationYear" class="text-danger"></span>
-                <span asp-validation-for="Cvc" class="text-danger"></span>
             </div>
 
             <hr class="mb-3" />
@@ -104,16 +110,16 @@
         <hr class="mb-3" />
 
         <ul class="list-group mb-3">
-           
+
             @foreach (var item in Model.CartModel.CartItems!)
             {
-                <li class="list-group-item d-flex justify-content-between">
-                    <div>
-                        <h6>@item.Name <span class="text-muted">(@item.Quantity)</span></h6>
-                    </div>
-                        
-                    <strong>@item.Price.ToString("c")</strong>
-                </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6>@item.Name <span class="text-muted">(@item.Quantity)</span></h6>
+                        </div>
+
+                        <strong>@item.Price.ToString("c")</strong>
+                    </li>
             }
 
             <hr />

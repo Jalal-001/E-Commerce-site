@@ -319,7 +319,7 @@ namespace CommerceAppWebUI.Controllers
             TempData.Put("message", new AlertMessage()
             {
                 AlertType = "warning",
-                Title = "Succesfully updated",
+                Title = "Succesfully deleted",
                 Message = $"{entity.Name} succesfully deleted"
             });
             return RedirectToAction("ProductList");

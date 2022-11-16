@@ -1,6 +1,7 @@
 ﻿using CommerceApp.Data.Abstract;
 using CommerceApp.Entity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;

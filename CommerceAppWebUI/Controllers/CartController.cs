@@ -191,18 +191,18 @@ namespace CommerceAppWebUI.Controllers
 
             PaymentCard paymentCard = new PaymentCard();
             paymentCard.CardHolderName = "Ali";
-            // paymentCard.CardNumber = model.CardNumber;
-            // paymentCard.ExpireMonth = model.ExpirationMonth;
-            // paymentCard.ExpireYear = model.ExpirationYear;
-            // paymentCard.Cvc = model.Cvc;
+            paymentCard.CardNumber = model.CardNumber;
+            paymentCard.ExpireMonth = model.ExpirationMonth;
+            paymentCard.ExpireYear = model.ExpirationYear;
+            paymentCard.Cvc = model.Cvc;
             paymentCard.RegisterCard = 0;
 
             request.PaymentCard = paymentCard;
 
-            paymentCard.CardNumber = "5528790000000008";
-            paymentCard.ExpireMonth = "12";
-            paymentCard.ExpireYear = "2030";
-            paymentCard.Cvc = "123";
+            //paymentCard.CardNumber = "5528790000000008";
+            //paymentCard.ExpireMonth = "12";
+            //paymentCard.ExpireYear = "2030";
+            //paymentCard.Cvc = "123";
 
             Buyer buyer = new Buyer();
             buyer.Id = "BY789";

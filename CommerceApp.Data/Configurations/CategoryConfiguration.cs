@@ -14,8 +14,8 @@ namespace CommerceApp.Data.Configurations
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasKey(c => c.CategoryId);
-            builder.Property(c=>c.Name).HasMaxLength(20).IsRequired();
-            builder.Property(c=>c.Url).HasMaxLength(40).IsRequired();
+            builder.Property(c => c.Name).HasMaxLength(20).IsRequired();
+            builder.Property(c => c.Url).HasMaxLength(40).IsRequired();
         }
     }
 }

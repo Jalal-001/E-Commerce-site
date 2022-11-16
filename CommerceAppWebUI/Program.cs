@@ -10,8 +10,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using CommerceAppWebUI.EmailServices;
+using CommerceAppWebUI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 IConfiguration _configuration;
 _configuration = builder.Configuration;
@@ -19,9 +22,18 @@ _configuration = builder.Configuration;
 
 // *** Add services to the container (For MVC) ***
 
+
+//builder.Services.AddDbContext<CommerceAppContext>(options => options.UseSqlite(_configuration.GetConnectionString("Sqlite")));
+//builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlite(_configuration.GetConnectionString("Sqlite")));
+
+builder.Services.AddDbContext<CommerceAppContext>(options => options.UseSqlServer(_configuration.GetConnectionString("MSSql"), options => options.EnableRetryOnFailure()));
+builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(_configuration.GetConnectionString("MSSql"), options => options.EnableRetryOnFailure()));
+
+//builder.Services.AddDbContext<CommerceAppContext>(options => options.UseMySQL(_configuration.GetConnectionString("MySql")));
+//builder.Services.AddDbContext<ApplicationContext>(options => options.UseMySQL(_configuration.GetConnectionString("MySql")));
+
+
 // Identity
-builder.Services.AddDbContext<CommerceAppContext>(options => options.UseSqlite(_configuration.GetConnectionString("Sqlite")));
-builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlite(_configuration.GetConnectionString("Sqlite")));
 
 builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
 
@@ -80,6 +92,7 @@ builder.Services.AddScoped<IOrderService, OrderManager>();
 var app = builder.Build();
 
 
+
 //Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -95,7 +108,7 @@ using (var scope = scopeFactory.CreateScope())
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
     var cartService = scope.ServiceProvider.GetRequiredService<ICartService>();
     var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
-    SeedIdentity.Seed(userManager, roleManager,cartService, configuration).Wait();
+    SeedIdentity.Seed(userManager, roleManager, cartService, configuration).Wait();
 }
 
 
@@ -196,9 +209,6 @@ app.MapControllerRoute
         name: "default",
         pattern: "{controller=home}/{action=index}/{id?}"
     );
-
-
-
 
 
 

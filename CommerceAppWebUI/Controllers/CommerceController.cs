@@ -16,7 +16,7 @@ namespace CommerceAppWebUI.Controllers
 
 
 
-        public IActionResult list(string category,int page)
+        public IActionResult list(string category,int page=1)
         {
             const int pageSize = 3;
             var productListViewModel = new ProductListViewModel()

@@ -14,10 +14,10 @@ namespace CommerceApp.Data.Configurations
         public void Configure(EntityTypeBuilder<OrderItem> builder)
         {
             builder.HasKey(ot => ot.Id);
-            builder.Property(ot=>ot.OrderId).IsRequired();
-            builder.Property(ot=>ot.ProductId).IsRequired();
-            builder.Property(ot=>ot.Price).IsRequired();
-            builder.Property(ot=>ot.Quantity).IsRequired();
+            builder.Property(ot => ot.OrderId).IsRequired();
+            builder.Property(ot => ot.ProductId).IsRequired();
+            builder.Property(ot => ot.Price).IsRequired();
+            builder.Property(ot => ot.Quantity).IsRequired();
         }
     }
 }

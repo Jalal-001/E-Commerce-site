@@ -15,7 +15,6 @@ namespace CommerceApp.Data.Concrete.EfCore
         {
 
         }
-
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories{ get; set; }
         public DbSet<Cart> Carts{ get; set; }
