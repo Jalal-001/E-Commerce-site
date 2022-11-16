@@ -9,6 +9,7 @@
         <div class="col-md-8">
             <div asp-validation-summary="All" class="text-danger"></div>
             <input type="hidden" name="ProductId" value="@Model.ProductId">
+
             <div class="form-group row mb-3">
                 <label class="col-sm-2 form-label" asp-for="@Model.Name"></label>
                 <div class="col-sm-10">
@@ -16,6 +17,7 @@
                 </div>
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+
             <div class="form-group row mb-3">
                 <label class="col-sm-2 form-label" asp-for="@Model.Url"></label>
                 <div class="col-sm-10">
@@ -23,6 +25,7 @@
                 </div>
                 <span asp-validation-for="Url" class="text-danger"></span>
             </div>
+
             <div class="form-group row mb-3">
                 <label class="col-sm-2 form-label" asp-for="@Model.Price"></label>
                 <div class="col-sm-10">
@@ -30,6 +33,7 @@
                 </div>
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
+
             <div class="form-group row mb-3">
                 <label class="col-sm-2 form-label" asp-for="@Model.Description"></label>
                 <div class="col-sm-10">
@@ -37,17 +41,19 @@
                 </div>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+
             <div class="form-group row mb-3">
                 <label class="col-sm-2 form-label" asp-for="@Model.ImgUrl"></label>
                 <div class="col-sm-10">
-
                     <input type="hidden" asp-for="@Model.ImgUrl">
                     <div class="input-group mb-3">
-                      <input type="file" name="file" class="form-control">
+                        <input type="hidden" asp-for="@Model.ImgUrl" />
+                        <input type="file" name="file" class="form-control" asp-for="@Model.ImgUrl">
                     </div>
                 </div>
                 <span asp-validation-for="ImgUrl" class="text-danger"></span>
             </div>
+
             <div class="form-group row mb-3">
                 <div class="col-sm-10 offset-2">
                     <button type="submit" class="btn btn-outline-primary">Save Changes</button>

@@ -22,8 +22,8 @@ namespace CommerceAppWebUI.Models
         [Required]
         public string Description { get; set; }
 
-        [Required]
-        public string ImgUrl { get; set; }
+        //[Required]
+        public string? ImgUrl { get; set; }
         public bool IsApproved { get; set; } = false;
         public bool IsHomePage { get; set; } = false;
         public List<Category>? SelectedCategories { get; set; }

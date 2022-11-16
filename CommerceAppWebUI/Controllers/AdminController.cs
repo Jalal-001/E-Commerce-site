@@ -209,21 +209,30 @@ namespace CommerceAppWebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateProduct(ProductModel model)
+        public async Task<IActionResult> CreateProduct(ProductModel model, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
-                var entity = new Product()
-                {
-                    Name = model.Name,
-                    Url = model.Url,
-                    Price = model.Price,
-                    Description = model.Description,
-                    ImgUrl = model.ImgUrl
-                };
-                _productService.Create(entity);
+                var entity = new Product();
+                entity.Name = model.Name;
+                entity.Url = model.Url;
+                entity.Price = model.Price;
+                entity.Description = model.Description;
 
-                return RedirectToAction("ProductList");
+                if (file != null)
+                {
+                    var extention = Path.GetExtension(file.FileName);
+                    var randomName = string.Format($"{Guid.NewGuid()}{extention}");
+                    entity.ImgUrl = randomName;
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img", randomName);
+
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                }
+
+                _productService.Create(entity);
 
                 TempData.Put("message", new AlertMessage()
                 {
@@ -231,6 +240,8 @@ namespace CommerceAppWebUI.Controllers
                     Title = "Succesfully created",
                     Message = $"{entity.Name} succesfully created"
                 });
+
+                return RedirectToAction("ProductList");
             }
             return View(model);
         }
@@ -255,6 +266,8 @@ namespace CommerceAppWebUI.Controllers
                 Price = entity.Price,
                 Description = entity.Description,
                 ImgUrl = entity.ImgUrl,
+                IsApproved = entity.IsApproved,
+                IsHomePage = entity.IsHomePage,
 
                 SelectedCategories = entity.ProductCategories.Select(o => o.Category).ToList()
             };
@@ -263,11 +276,11 @@ namespace CommerceAppWebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditProduct(ProductModel model, int[] categoryIds, IFormFile file)
+        public async Task<IActionResult> EditProduct(ProductModel model, int[] categoryIds, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
-                //model -> from 'UpdateProduct' form
+                //model -> from 'EditProduct' form
 
                 var entity = _productService.GetById(model.ProductId);
                 if (entity == null)
