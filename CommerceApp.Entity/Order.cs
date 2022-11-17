@@ -30,7 +30,7 @@ namespace CommerceApp.Entity
     {
         waiting=0,
         unpaid=1,
-        complated=2
+        completed=2
     }
 
     public enum EnumPaymentType

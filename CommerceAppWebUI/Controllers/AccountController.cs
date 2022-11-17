@@ -119,6 +119,14 @@ namespace CommerceAppWebUI.Controllers
                 // send email
                 string subject = $"Please follow the <a href='https://localhost:7043{url}'>link</a> to verify your account";
                 string htmlMessage = "Please verify your account using the email link!";
+
+                TempData.Put("message", new AlertMessage()
+                {
+                    AlertType = "warning",
+                    Title = "",
+                    Message = "Please verify your account using the email link!"
+                });
+
                 await _emailSender.SendEmailAsync(model.Email, htmlMessage, subject);
 
                 return RedirectToAction("Login", "Account");

@@ -141,7 +141,7 @@ namespace CommerceAppWebUI.Controllers
             var order = new Order();
 
             order.OrderNumber = new Random().Next(111111, 999999).ToString();
-            order.OrderState = EnumOrderState.complated;
+            order.OrderState = EnumOrderState.completed;
             order.EnumPaymentType = EnumPaymentType.CreditCard;
             order.PaymentId = payment.PaymentId;
             order.ConversationId = payment.ConversationId;

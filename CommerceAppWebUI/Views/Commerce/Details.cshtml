@@ -11,9 +11,9 @@
     <h3 class="mt-3">@Model.Product.Name</h3> <hr>
     @foreach (var item in Model.Categories)
         {
-            <a asp-controller="Commerce" asp-action="List" asp-route-category="@item.Url" class=" btn btn-link p-0 mb-0">@item.Name</a>
+            <a asp-controller="Commerce" asp-action="List" asp-route-category="@item.Url" class=" btn btn-link p-0 mb-0" >@item.Name</a>
         }
-    <p class="">@Model.Product.Price $</p>
+    <p class="">Price: @Model.Product.Price Azn </p>
 
     <form asp-controller="Cart" asp-action="AddToCart" method="post" style="display:inline"> 
         <input type="hidden" name="productId" value="@Model.Product.ProductId">

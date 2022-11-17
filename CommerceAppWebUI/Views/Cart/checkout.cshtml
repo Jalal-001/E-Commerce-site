@@ -113,13 +113,13 @@
 
             @foreach (var item in Model.CartModel.CartItems!)
             {
-                    <li class="list-group-item d-flex justify-content-between">
-                        <div>
-                            <h6>@item.Name <span class="text-muted">(@item.Quantity)</span></h6>
-                        </div>
+                <li class="list-group-item d-flex justify-content-between">
+                    <div>
+                        <h6>@item.Name <span class="text-muted">(@item.Quantity)</span></h6>
+                    </div>
 
-                        <strong>@item.Price.ToString("c")</strong>
-                    </li>
+                    <strong>@item.Price.ToString("c")</strong>
+                </li>
             }
 
             <hr />
